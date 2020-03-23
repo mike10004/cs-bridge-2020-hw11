@@ -2,5 +2,6 @@
   "question_model": {
     "project_name": "hw11",
     "author": "mac937@nyu.edu"
-  }
+  },
+  "stage_prefix": "mac937_hw11_"
 }
