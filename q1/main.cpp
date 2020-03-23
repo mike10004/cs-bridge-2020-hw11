@@ -5,12 +5,10 @@
 
 using namespace std;
 
-const char STAR = '*';
-
-void printStarLine(int length) {
+void printLine(int length, char mark) {
     if (length > 0) {
-        cout << STAR;
-        printStarLine(length - 1);
+        cout << mark;
+        printLine(length - 1, mark);
     } else {
         cout << endl;
     }
@@ -19,15 +17,23 @@ void printStarLine(int length) {
 void printTriangle(int n) {
     if (n > 0) {
         printTriangle(n - 1);
-        printStarLine(n);
+        printLine(n, '*');
     }
 }
 
 void printOppositeTriangles(int n) {
     if (n > 0) {
-        printStarLine(n);
+        printLine(n, '*');
         printOppositeTriangles(n - 1);
-        printStarLine(n);
+        printLine(n, '*');
+    }
+}
+
+void printRuler(int n) {
+    if (n > 0) {
+        printRuler(n - 1);
+        printLine(n, '-');
+        printRuler(n - 1);
     }
 }
 
@@ -40,5 +46,8 @@ int main() {
     cout << endl;
     cout << "Part B" << endl;
     printOppositeTriangles(n);
+    cout << endl;
+    cout << "Part C" << endl;
+    printRuler(n);
     return 0;
 }
