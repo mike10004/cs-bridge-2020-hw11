@@ -1,20 +1,24 @@
 {
-  "input": "{nombre}\n",
-  "input_file": "input-template.txt",
-  "expected": "Enter your name: {nombre}\nhello, {nombre}\n",
-  "expected_file": "expected-template.txt",
+  "input": "{n}\n",
+  "expected": "Enter a positive integer: {n}\n{triangle}\n",
   "param_names": [
-    "nombre"
+    "n", "triangle"
   ],
   "test_cases": [
     [
-      "jane"
+      "0", "Part A\n\nPart B"
     ],
     [
-      "julia"
+      "1", "Part A\n*\n\nPart B\n*\n*"
     ],
     [
-      "jennifer"
+      "2", "Part A\n*\n**\n\nPart B\n**\n*\n*\n**"
+    ],
+    [
+      "3", "Part A\n*\n**\n***\n\nPart B\n***\n**\n*\n*\n**\n***"
+    ],
+    [
+      "4", "Part A\n*\n**\n***\n****\n\nPart B\n****\n***\n**\n*\n*\n**\n***\n****"
     ]
   ]
 }
