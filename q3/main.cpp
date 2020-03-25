@@ -7,6 +7,12 @@
 
 using namespace std;
 
+/**
+ * Finds the minimum value in an array.
+ * @param arr the array
+ * @param arrSize the array length
+ * @return minimum value; behavior undefined for array length zero
+ */
 int minInArray1(int arr[], int arrSize) {
     if (arrSize == 1) {
         return arr[0];
@@ -20,6 +26,13 @@ int minInArray1(int arr[], int arrSize) {
     }
 }
 
+/**
+ * Finds the minimum value of a range of an array.
+ * @param arr the array
+ * @param low lowest index of the range (inclusive)
+ * @param high highest index of the range (inclusive)
+ * @return minimum value; behavior undefined for low > high
+ */
 int minInArray2(int arr[], int low, int high) {
     int head = arr[low];
     if (low == high) {

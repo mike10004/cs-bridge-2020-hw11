@@ -54,6 +54,8 @@ void testFindMinimumCost(const vector<int>& board, int expected) {
 
 int main() {
     testFindMinimumCost({1}, 1);
+    testFindMinimumCost({1, 1}, 2);
+    testFindMinimumCost({1, 1, 1}, 2);
     testFindMinimumCost({2, 4}, 6);
     testFindMinimumCost({2, 4, 8}, 10);
     testFindMinimumCost({2, 0, 4}, 6);

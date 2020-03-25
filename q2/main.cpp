@@ -7,10 +7,12 @@
 
 using namespace std;
 
-void testSumOfSquares(const vector<int>& values, int expected);
-void copyVectorToArray(const vector<int>& values, int arr[]);
-void testIsSorted(const vector<int>& values, bool expected);
-
+/**
+ * Computes the sum of squares of values in an array.
+ * @param arr the array
+ * @param arrSize the array length
+ * @return sum of the squares of the values
+ */
 int sumOfSquares(int arr[], int arrSize) {
     if (arrSize > 0) {
         int v = arr[arrSize - 1];
@@ -20,6 +22,12 @@ int sumOfSquares(int arr[], int arrSize) {
     }
 }
 
+/**
+ * Checks whether an array is sorted in ascending order.
+ * @param arr the array
+ * @param arrSize the array length
+ * @return true if and only if the array is sorted in ascending order
+ */
 bool isSorted(int arr[], int arrSize) {
     if (arrSize > 1) {
         int ultimate = arr[arrSize - 1];
@@ -29,6 +37,11 @@ bool isSorted(int arr[], int arrSize) {
         return true;
     }
 }
+
+// Functions for testing
+void testSumOfSquares(const vector<int>& values, int expected);
+void copyVectorToArray(const vector<int>& values, int arr[]);
+void testIsSorted(const vector<int>& values, bool expected);
 
 int main() {
     testSumOfSquares({}, 0);

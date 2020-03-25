@@ -5,6 +5,11 @@
 
 using namespace std;
 
+/**
+ * Prints a sequence of identical characters and a newline.
+ * @param length length of sequence
+ * @param mark character
+ */
 void printLine(int length, char mark) {
     if (length > 0) {
         cout << mark;
@@ -14,6 +19,10 @@ void printLine(int length, char mark) {
     }
 }
 
+/**
+ * Prints a triangle of asterisks.
+ * @param n number of lines in the triangle
+ */
 void printTriangle(int n) {
     if (n > 0) {
         printTriangle(n - 1);
@@ -21,6 +30,10 @@ void printTriangle(int n) {
     }
 }
 
+/**
+ * Prints symmetrical triangles.
+ * @param n number of lines in each triangle 
+ */
 void printOppositeTriangles(int n) {
     if (n > 0) {
         printLine(n, '*');
@@ -29,6 +42,10 @@ void printOppositeTriangles(int n) {
     }
 }
 
+/**
+ * Prints a ruler.
+ * @param n nonnegative integer specifying how many dashes are in longest line of ruler
+ */
 void printRuler(int n) {
     if (n > 0) {
         printRuler(n - 1);
