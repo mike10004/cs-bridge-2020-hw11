@@ -2,6 +2,8 @@
 // hw11 question 3
 
 #include <iostream>
+#include <vector>  // stage: cut
+#include <cassert> // stage: cut
 
 using namespace std;
 
@@ -31,6 +33,32 @@ int minInArray2(int arr[], int low, int high) {
     }
 }
 
+// stage: cut start
+void testMinInArrayFunctions(const vector<int>& values) {
+    bool expectedMinAssigned = false;
+    int expectedMin = 0;
+    int i = 0;
+    int* arr = new int[values.size()];
+    for (int value : values) {
+        arr[i] = value;
+        if (!expectedMinAssigned) {
+            expectedMin = value;
+            expectedMinAssigned = true;
+        }
+        if (expectedMin == -1 || value < expectedMin) {
+            expectedMin = value;
+        }
+        i++;
+    }
+    assert(expectedMinAssigned);
+    int actual1 = minInArray1(arr, values.size());
+    int actual2 = minInArray2(arr, 0, values.size() - 1);
+    delete[] arr;
+    assert(expectedMin == actual1);
+    assert(expectedMin == actual2);    
+}
+
+// stage: cut stop
 int main() {
     int arr[10] = {9, -2, 14, 12, 3, 6, 2, 1, -9, 15};
     int res1, res2, res3, res4;
@@ -40,7 +68,22 @@ int main() {
     res3 = minInArray2(arr, 2, 5);
     res4 = minInArray1(arr+2, 4); //arr+2 is equivalent to &(arr[2])
     cout<<res3<<" "<<res4<<endl; //should both be 3
-        
+    // stage: cut start
+    testMinInArrayFunctions({0});
+    testMinInArrayFunctions({-3});
+    testMinInArrayFunctions({3});
+    testMinInArrayFunctions({0, 1});
+    testMinInArrayFunctions({0, 0, 1});
+    testMinInArrayFunctions({1, 0});
+    testMinInArrayFunctions({1, 0, 0});
+    testMinInArrayFunctions({1, 0, 1});
+    testMinInArrayFunctions({0, 1, 0});
+    testMinInArrayFunctions({1, 0, 1});
+    testMinInArrayFunctions({2, 1, 0});
+    testMinInArrayFunctions({1, 0, 1});
+    testMinInArrayFunctions({0, 1, 2});
+    testMinInArrayFunctions({9, 3, 8, -3, -4, 11, 58, 3, -3});
+    // stage: cut stop
     if (res1 == -9 && res2 == -9 && res3 == 3 && res4 == 3) {
         return 0;
     } else {

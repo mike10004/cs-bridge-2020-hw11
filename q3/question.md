@@ -4,16 +4,22 @@ Write two recursive versions of the function minInArray. The function will be gi
 sequence of elements and should return the minimum value in that sequence. The two versions
 differ from one another in the technique we use to pass the sequence to the function.
 In version 1 – The prototype of the function should be:
-int minInArray1(int arr[], int arrSize)
+
+    int minInArray1(int arr[], int arrSize)
+
 Here, the function is given arr, an array of integers, and its logical size, arrSize.
 The function should find the minimum value out of all the elements in positions:
 0, 1, 2, ..., arrSize-1.
+
 In version 2 – The prototype of the function should be:
-int minInArray2(int arr[], int low, int high)
+
+    int minInArray2(int arr[], int low, int high)
+
 Here, the function is given arr, an array of integers, and two additional indices: low and high
 (low ≤ high), which indicate the range of indices that need to be considered.
 The function should find the minimum value out of all the elements in positions:
 low, low+1, ..., high.
+
 Use the following main to check your program:
 
     int main() {
